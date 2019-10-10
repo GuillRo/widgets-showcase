@@ -17,9 +17,9 @@ const AboutIndex = () => {
           </div>
         </div>
       </div>
+      
       <style jsx>{`
         .main {
-          /* border: solid 1px var(--main-blue); */
           padding: 50px;
           color: var(--main-blue);
           text-align: center;

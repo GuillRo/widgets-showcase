@@ -28,16 +28,15 @@ const TabBar = ({ links }) => {
         .tab-bar :global(a) {
           text-decoration: none;
           color: white;
-          background-color: #459efd;
+          background-color: var(--main-blue);
           padding: 5px;
         }
-
         .tab-bar :global(.active) {
           background-color: white;
           color: #459efd;
-          border-top: solid 1px #459efd;
-          border-left: solid 1px #459efd;
-          border-right: solid 1px #459efd;
+          border-top: solid 1px var(--main-blue);
+          border-left: solid 1px var(--main-blue);
+          border-right: solid 1px var(--main-blue);
           z-index: 1;
           position: relative;
         }
