@@ -1,19 +1,10 @@
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import dynamic from 'next/dynamic'
 
 const TabBar = ({ links }) => {
 
-  const [activeTab, setActiveTab] = useState()
-
-  useEffect(() => {
-    if (typeof sessionStorage === 'undefined' || sessionStorage.getItem('activetab') === null){
-      sessionStorage.setItem('activetab', links[0].title)
-      setActiveTab(links[0].title)
-    }
-    else {
-      setActiveTab(sessionStorage.getItem('activetab'))
-    }
-  }, [])
+  const [activeTab, setActiveTab] = useState(sessionStorage.getItem('activetab') || links[0].title)
 
   const setActive = (title) => {
     sessionStorage.setItem('activetab', title)
@@ -55,4 +46,6 @@ const TabBar = ({ links }) => {
   )
 }
 
-export default TabBar
+export default dynamic(() => Promise.resolve(TabBar), {
+  ssr: false
+})

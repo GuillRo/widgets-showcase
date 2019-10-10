@@ -21,14 +21,14 @@ const Home = () => (
       </div>
       <div className="row">
         <div className="mainbox col-8 offset-2">
-          <button type="button" className="btn btn-primary"> WHaaaat?</button>
+          <button type="button" className="btn btn-primary"> WIP...</button>
         </div>
       </div>
     </div>
 
     <style jsx>{`
       .mainbox{
-        border: solid 1px #459efd;
+        border: solid 1px var(--main-blue);
         display: flex;
         justify-content: center;
         align-items: center;
