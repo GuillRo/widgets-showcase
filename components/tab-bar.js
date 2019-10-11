@@ -4,19 +4,19 @@ import dynamic from 'next/dynamic'
 
 const TabBar = ({ links }) => {
 
-  const [activeTab, setActiveTab] = useState(sessionStorage.getItem('activetab') || links[0].title)
+  const [activeTab, setActiveTab] = useState(sessionStorage.getItem('activetab') || links[0].href)
 
-  const setActive = (title) => {
-    sessionStorage.setItem('activetab', title)
-    setActiveTab(title)
+  const setActive = (href) => {
+    sessionStorage.setItem('activetab', href)
+    setActiveTab(href)
   }
 
   const tabs = links.map((link, index) =>
     <Link
       key={index} href={link.href}>
       <a
-        className={link.title === activeTab ? "active" : ""}
-        onClick={e => setActive(link.title)}>
+        className={link.href === activeTab ? "active" : ""}
+        onClick={e => setActive(link.href)}>
         {link.title}
       </a>
     </Link>)
