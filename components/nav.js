@@ -1,12 +1,17 @@
-import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
+import { useGlobal } from 'reactn'
 
-const Nav = ({ router }) => (
-  <nav>
-    {router.pathname === '/about' ? <Link href="/"><a className="btn-widgets">Widgets</a></Link> : <Link href="/about"><a>About</a></Link> }
+const Nav = ({ router }) => {
 
-    <style jsx>{`
+  const [activetab] = useGlobal('activetab')
+
+  return (
+
+    <nav>
+      {router.pathname === '/about' ? <Link href={activetab}><a className="btn-widgets">Widgets</a></Link> : <Link href="/about"><a>About</a></Link>}
+
+      <style jsx>{`
       nav {
         text-align: right;
         padding: 10px 25px;
@@ -21,7 +26,8 @@ const Nav = ({ router }) => (
         border: dashed 1px var(--main-blue);
       }
     `}</style>
-  </nav>
-)
+    </nav>
+  )
+}
 
 export default withRouter(Nav)

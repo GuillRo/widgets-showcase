@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { setGlobal } from 'reactn';
 import App from 'next/app'
 import DefaultLayout from '../components/layouts/default'
 import MainLayout from '../components/layouts/main'
+
+setGlobal({
+  activetab:"/slider"
+})
 
 class MyApp extends App {
   render() {
