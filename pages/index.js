@@ -3,8 +3,8 @@ import { useGlobal } from 'reactn'
 import dynamic from 'next/dynamic'
 
 const Home = () => {
-  const [global] = useGlobal('activetab')
-  Router.push(global.activetab)
+  const [activetab] = useGlobal('activetab')
+  Router.push(activetab)
   return null
 }
 
