@@ -1,22 +1,17 @@
 import Link from 'next/link'
-import { useState } from 'react'
 import dynamic from 'next/dynamic'
+import { useGlobal } from 'reactn'
 
 const TabBar = ({ links }) => {
 
-  const [activeTab, setActiveTab] = useState(sessionStorage.getItem('activetab') || links[0].href)
-
-  const setActive = (href) => {
-    sessionStorage.setItem('activetab', href)
-    setActiveTab(href)
-  }
+  const [activetab, setActivetab] = useGlobal('activetab')
 
   const tabs = links.map((link, index) =>
     <Link
       key={index} href={link.href}>
       <a
-        className={link.href === activeTab ? "active" : ""}
-        onClick={e => setActive(link.href)}>
+        className={link.href === activetab ? "active" : ""}
+        onClick={e => setActivetab(link.href)}>
         {link.title}
       </a>
     </Link>)

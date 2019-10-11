@@ -1,14 +1,13 @@
 import Router from 'next/router'
+import { useGlobal } from 'reactn'
 import dynamic from 'next/dynamic'
 
 const Home = () => {
-  const activetab = sessionStorage.getItem('activetab') || "/slider"
-  Router.push(activetab)
+  const [global] = useGlobal('activetab')
+  Router.push(global.activetab)
   return null
 }
 
-export default Home
-
-// export default dynamic(() => Promise.resolve(Home), {
-//   ssr: false
-// })
+export default dynamic(() => Promise.resolve(Home), {
+  ssr: false
+})
