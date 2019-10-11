@@ -4,7 +4,7 @@ import { withRouter } from 'next/router'
 
 const Nav = ({ router }) => (
   <nav>
-    {router.pathname === '/' ? <Link href="/about"><a>About</a></Link> : <Link href="/"><a className="btn-widgets">Widgets</a></Link>}
+    {router.pathname === '/about' ? <Link href="/"><a className="btn-widgets">Widgets</a></Link> : <Link href="/about"><a>About</a></Link> }
 
     <style jsx>{`
       nav {
