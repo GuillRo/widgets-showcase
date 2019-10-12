@@ -1,18 +1,14 @@
 import React from 'react'
-import Head from '../head'
-import Nav from '../nav'
 import TabBar from '../tab-bar'
 
 const widgets = [
-  { title: "SoundBar", href: "/slider" },
+  { title: "SoundBar", href: "/soundbar" },
   { title: "Drag&Drop", href: "/dragndrop" },
   { title: "MagnifyingGlass", href: "/glass" }
 ]
 
 const ShowcaseLayout = (props) => (
   <div>
-    <Head title="Widgets Showcase" />
-    <Nav />
     <div className="container">
       <div className="row">
         <div className="col-8 offset-2">
