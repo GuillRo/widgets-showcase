@@ -4,7 +4,7 @@ import DefaultLayout from '../components/layouts/default'
 import MainLayout from '../components/layouts/main'
 
 setGlobal({
-  activetab:"/slider"
+  activetab:"/soundbar"
 })
 
 class MyApp extends App {

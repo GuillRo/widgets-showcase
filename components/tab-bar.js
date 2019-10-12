@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { useGlobal } from 'reactn'
 
 const TabBar = ({ links }) => {
@@ -40,6 +39,4 @@ const TabBar = ({ links }) => {
   )
 }
 
-export default dynamic(() => Promise.resolve(TabBar), {
-  ssr: false
-})
+export default TabBar

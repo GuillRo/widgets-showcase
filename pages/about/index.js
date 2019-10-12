@@ -1,11 +1,6 @@
-import Head from '../../components/head'
-import Nav from '../../components/nav'
-
 const AboutIndex = () => {
   return (
     <>
-      <Head title="About | Widgets Showcase" />
-      <Nav />
       <div className="container">
         <div className="row">
           <div className="main col-8 offset-2">
