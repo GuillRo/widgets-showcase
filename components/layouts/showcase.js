@@ -8,7 +8,7 @@ const widgets = [
 ]
 
 const ShowcaseLayout = (props) => (
-  <div>
+  <>
     <div className="container">
       <div className="row">
         <div className="col-8 offset-2">
@@ -31,7 +31,7 @@ const ShowcaseLayout = (props) => (
         min-height: 75vh;
       }
     `}</style>
-  </div>
+  </>
 )
 
 export default ShowcaseLayout

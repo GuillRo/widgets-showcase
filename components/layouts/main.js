@@ -1,10 +1,11 @@
 import Head from '../head'
 import Nav from '../nav'
+import {useRouter} from "next/router"
 
 const MainLayout = (props) => {
   return (
     <>
-      <Head title="Widgets Showcase" />
+      <Head title={useRouter().pathname === "/about" ? "About | Widgets Showcase" : "Widgets Showcase"}/>
       <Nav />
       {props.children}
       <style jsx global>{`
