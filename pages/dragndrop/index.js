@@ -2,8 +2,7 @@ import ShowcaseLayout from "../../components/layouts/showcase"
 
 const DragNDrop = () => {
   return (
-    <h1>DragNDrop
-  </h1>
+    <button className="btn btn-primary"> DragNDrop</button>
   )
 }
 

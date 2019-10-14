@@ -52,9 +52,13 @@ const Slider = () => {
     }
   }
 
+  const handleTouchMove = event => {
+    setValue(event.touches[0].clientX)
+  }
+
   return (
 
-    <div className="slider" onMouseMove={e => handleMouseMove(e)} onMouseLeave={handleMouseUp}>
+    <div className="slider" onTouchMove={e => handleTouchMove(e)} onMouseMove={e => handleMouseMove(e)} onMouseLeave={handleMouseUp}>
       <div className="slider-bar-down" ref={sliderContainer} onClick={e => setValue(e.pageX)}>
         <div className="slider-bar-up">
           <button className="button-circle" onKeyDown={e => handleKeyPress(e)} onMouseUp={handleMouseUp} onMouseDown={handleMouseDown}>{sliderValue}</button>
@@ -67,7 +71,6 @@ const Slider = () => {
           height: 50px;
           display: flex;
           align-items: center;
-          padding: 0 5%;
         }
         .slider-bar-down {
           cursor: pointer;
