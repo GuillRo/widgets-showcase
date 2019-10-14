@@ -39,22 +39,35 @@ const Slider = () => {
     setClicked(false)
   }
 
+  const handleKeyPress = event => {
+    const key = event.keyCode
+    if (key === 37 && sliderValue > 10) {
+      setSliderValue(sliderValue - 10)
+    } else if (key === 37 && sliderValue <= 10) {
+      setSliderValue(0)
+    } else if (key === 39 && sliderValue < 90) {
+      setSliderValue(sliderValue + 10)
+    } else if (key === 39 && sliderValue >= 90) {
+      setSliderValue(100)
+    }
+  }
+
   return (
 
     <div className="slider" onMouseMove={e => handleMouseMove(e)} onMouseLeave={handleMouseUp}>
       <div className="slider-bar-down" ref={sliderContainer} onClick={e => setValue(e.pageX)}>
         <div className="slider-bar-up">
-          <button className="button-circle" onMouseUp={handleMouseUp} onMouseDown={handleMouseDown}>{sliderValue}</button>
+          <button className="button-circle" onKeyDown={e => handleKeyPress(e)} onMouseUp={handleMouseUp} onMouseDown={handleMouseDown}>{sliderValue}</button>
         </div>
       </div>
 
       <style jsx>{`
         .slider {
-          width: 25vw;
+          width: 100%;
           height: 50px;
           display: flex;
           align-items: center;
-          padding: 0 30px;
+          padding: 0 5%;
         }
         .slider-bar-down {
           cursor: pointer;

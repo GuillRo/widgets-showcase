@@ -3,12 +3,13 @@ import Slider from '../../components/slider'
 
 const SoundBar = () => {
   return (
-    <div className="SoundBars-page">
-      <Slider />
+    <div className="main-display container-fluid">
+      <div className="row">
+        <div className="col col-md-8 offset-md-2 col-xs-12">
+          <Slider />
+        </div>
+      </div>
       <style jsx>{`
-        .SoundBars-page {
-          display: flex;
-        }
       `}</style>
     </div>
 

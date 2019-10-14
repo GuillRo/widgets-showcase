@@ -11,12 +11,12 @@ const ShowcaseLayout = (props) => (
   <>
     <div className="container">
       <div className="row">
-        <div className="col-8 offset-2">
+        <div className="col col-md-8 offset-md-2 col-xs-12">
           <TabBar links={widgets} />
         </div>
       </div>
       <div className="row">
-        <div className="mainbox col-8 offset-2">
+        <div className="mainbox col-md-8 offset-md-2 col-xs-12">
           {props.children}
         </div>
       </div>
@@ -29,6 +29,9 @@ const ShowcaseLayout = (props) => (
         justify-content: center;
         align-items: center;
         min-height: 75vh;
+      }
+      .col {
+        padding:0;
       }
     `}</style>
   </>

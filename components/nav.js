@@ -15,12 +15,14 @@ const Nav = ({ router }) => {
       nav {
         text-align: right;
         padding: 10px 25px;
+        margin-bottom: 25px;
       }
       a {
         color: var(--main-blue);
         text-decoration: none;
-        font-size: 24px;
+        font-size: 28px;
         padding: 5px;
+        margin-right: 10px;
       }
       .btn-widgets{
         border: dashed 1px var(--main-blue);
