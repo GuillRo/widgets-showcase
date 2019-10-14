@@ -15,16 +15,16 @@ const Nav = ({ router }) => {
       nav {
         text-align: right;
         padding: 10px 25px;
-        margin-bottom: 25px;
       }
       a {
         color: var(--main-blue);
         text-decoration: none;
-        font-size: 28px;
+        font-size: 24px;
         padding: 5px;
-        margin-right: 10px;
+        /* margin-right: 10px; */
       }
-      .btn-widgets{
+      a:focus{
+        outline: none;
         border: dashed 1px var(--main-blue);
       }
     `}</style>
