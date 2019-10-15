@@ -1,20 +1,22 @@
 import ShowcaseLayout from "../../components/layouts/showcase"
 import Slider from '../../components/slider'
+import { useGlobal } from 'reactn'
+import { useRouter } from 'next/router'
 
 const SoundBar = () => {
+
+  const [activetab, setActivetab] = useGlobal('activetab')
+  if (useRouter().pathname !== activetab) {
+    setActivetab(useRouter().pathname)
+  }
+
   return (
-    <div className="container flex-column">
-      <div className="row justify-content-center flex-row">
+    <div className="container h-100">
+      <div className="row justify-content-center flex-row h-100">
         <div className="col-8 d-flex align-items-center">
           <Slider />
         </div>
       </div>
-
-      <style jsx>{`
-        .page-container {
-          align-items: center;
-        }
-      `}</style>
     </div>
   )
 }
