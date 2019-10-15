@@ -19,9 +19,8 @@ const Nav = ({ router }) => {
       a {
         color: var(--main-blue);
         text-decoration: none;
-        font-size: 24px;
+        font-size: 30px;
         padding: 5px;
-        /* margin-right: 10px; */
       }
       a:focus{
         outline: none;

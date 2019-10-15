@@ -15,6 +15,7 @@ const MainLayout = (props) => {
           font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
           Helvetica, sans-serif;
           --main-blue: #459efd;
+          --dark-blue: #307dcf;
           display: flex;
           flex-direction: column;
           min-height: 100vh;

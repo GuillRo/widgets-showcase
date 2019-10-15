@@ -1,16 +1,16 @@
 import Link from 'next/link'
 import { useGlobal } from 'reactn'
 
-const TabBar = ({ links }) => {
+const TabBar = () => {
 
   const [activetab, setActivetab] = useGlobal('activetab')
+  const [pages] = useGlobal('pages')
 
-  const tabs = links.map((link, index) =>
+  const tabs = pages.map((link, index) =>
     <Link
       key={index} href={link.href}>
       <a
-        className={link.href === activetab ? "active" : ""}
-        onClick={e => setActivetab(link.href)}>
+        className={link.href === activetab ? "active" : ""}>
         {link.title}
       </a>
     </Link>)
@@ -22,8 +22,6 @@ const TabBar = ({ links }) => {
       </div>
       <div className="tab-bar-mobile">
         {tabs}
-        {/* <p>ui</p>
-        <i className="la la-bars" /> */}
       </div>
       <style jsx>{`
         .tab-bar {
@@ -34,24 +32,19 @@ const TabBar = ({ links }) => {
           color: white;
           background-color: var(--main-blue);
           padding: 5px;
-  word-wrap: break-word;
+          font-size: 18px;
         }
         .tab-bar :global(.tab-bar-desktop) {
           margin-top: 15px;
           padding: 0 20px;
         }
         .tab-bar :global(.tab-bar-mobile) {
-          /* background-color: var(--main-blue); */
+          background-color: var(--main-blue);
           margin: 0;
           padding: 0;
-          /* min-height: 50px; */
           color: white;
           display: flex;
           align-items: flex-end;
-        }
-        .tab-bar :global(a:focus) {
-          outline: none;
-          font-weight: bold;
         }
         .tab-bar :global(.active) {
           background-color: white;
@@ -61,6 +54,11 @@ const TabBar = ({ links }) => {
           border-right: solid 1px var(--main-blue);
           z-index: 1;
           position: relative;
+          font-size: 20px;
+        }
+        .tab-bar :global(a:focus) {
+          outline: none;
+          font-weight: bold;
         }
         @media (max-width:575px) {
           .tab-bar :global(.tab-bar-desktop) {
