@@ -39,14 +39,14 @@ const TabBar = () => {
           padding: 0 20px;
         }
         .tab-bar :global(.tab-bar-mobile) {
-          background-color: var(--main-blue);
+          /* background-color: var(--main-blue); */
           margin: 0;
           padding: 0;
           color: white;
           display: flex;
           align-items: flex-end;
         }
-        .tab-bar :global(.active) {
+        .tab-bar :global(.tab-bar-desktop > .active) {
           background-color: white;
           color: var(--main-blue);
           border-top: solid 1px var(--main-blue);
@@ -55,6 +55,17 @@ const TabBar = () => {
           z-index: 1;
           position: relative;
           font-size: 20px;
+        }
+        .tab-bar :global(.tab-bar-mobile > .active) {
+          background-color: white;
+          color: var(--main-blue);
+          border-top: solid 1px var(--main-blue);
+          border-left: solid 1px var(--main-blue);
+          border-right: solid 1px var(--main-blue);
+          z-index: 10;
+          position: relative;
+          font-size: 20px;
+          margin-bottom: -1px;
         }
         .tab-bar :global(a:focus) {
           outline: none;
