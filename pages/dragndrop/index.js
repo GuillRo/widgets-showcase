@@ -2,7 +2,7 @@ import ShowcaseLayout from "../../components/layouts/showcase"
 import { useGlobal } from 'reactn'
 import { useRouter } from 'next/router'
 
-const DragNDrop = () => {
+const DragNDropIndex = () => {
 
   const [activetab, setActivetab] = useGlobal('activetab')
   if (useRouter().pathname !== activetab) {
@@ -10,10 +10,13 @@ const DragNDrop = () => {
   }
 
   return (
-    <button className="btn btn-info"> DragNDrop</button>
+    <div className="d-flex justify-content-center align-items-center h-100 w-100">
+      <button className="btn btn-danger text-white">Work in progress</button>
+    </div>
+
   )
 }
 
-DragNDrop.Layout = ShowcaseLayout
+DragNDropIndex.Layout = ShowcaseLayout
 
-export default DragNDrop
+export default DragNDropIndex

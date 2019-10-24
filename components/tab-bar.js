@@ -69,7 +69,7 @@ const TabBar = () => {
         }
         .tab-bar :global(a:focus) {
           outline: none;
-          font-weight: bold;
+          text-decoration: underline;
         }
         @media (max-width:575px) {
           .tab-bar :global(.tab-bar-desktop) {

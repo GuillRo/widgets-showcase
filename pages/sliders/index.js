@@ -3,7 +3,7 @@ import Slider from '../../components/slider'
 import { useGlobal } from 'reactn'
 import { useRouter } from 'next/router'
 
-const SoundBar = () => {
+const SlidersIndex = () => {
 
   const [activetab, setActivetab] = useGlobal('activetab')
   if (useRouter().pathname !== activetab) {
@@ -21,6 +21,6 @@ const SoundBar = () => {
   )
 }
 
-SoundBar.Layout = ShowcaseLayout
+SlidersIndex.Layout = ShowcaseLayout
 
-export default SoundBar
+export default SlidersIndex
