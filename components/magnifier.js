@@ -6,7 +6,7 @@ export default props => {
   const sizeMagnifierDesktop = props.sizeDesktop
   const sizeMagnifierMobile = props.sizeMobile
 
-  const [position, setPosition] = useState({x: 50, y: 50})
+  const [position, setPosition] = useState({ x: 50, y: 50 })
   const imageContainer = useRef(null)
   const imageRef = useRef(null)
 
@@ -18,21 +18,24 @@ export default props => {
     }
   }
 
-  const moveMagnifier = event => {
+  const handleMouseMove = event => {
     setPosition(getPosPercentile(event.pageX, event.pageY))
+  }
+
+  const handleTouchMove = event => {
+    setPosition(getPosPercentile(event.touches[0].clientX, event.touches[0].clientY))
   }
 
   return (
 
-    <div className="image-container unselectable" onMouseMove={e => moveMagnifier(e)} ref={imageContainer}>
-      <img draggable="false" className="image unselectable" src={props.imgSrc} ref={imageRef}/>
+    <div className="image-container unselectable" onTouchMove={e => handleTouchMove(e)} onMouseMove={e => handleMouseMove(e)} ref={imageContainer}>
+      <img draggable="false" className="image unselectable" src={props.imgSrc} ref={imageRef} />
       <div className='magnifier' />
       <style jsx>{`
         .magnifier {
           margin: -${sizeMagnifierDesktop / 2}px;
           height: ${sizeMagnifierDesktop}px;
           width: ${sizeMagnifierDesktop}px;
-          padding: 50px;
           border: solid 5px pink;
           border-radius: 50%;
           z-index: 10;
@@ -44,23 +47,14 @@ export default props => {
           background-repeat: no-repeat;
           background-position: left ${position.x}% bottom ${position.y}%;
           background-origin: content-box;
-          padding: 75px 75px 70px 70px;
+          padding: 70px;
         }
         .image-container {
-          border: solid 2px var(--main-blue);
+          border: solid 3px var(--main-blue);
           position: relative;
         }
         .image {
           filter: invert(75%);
-        }
-        .unselectable {
-          user-select: none;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          -moz-user-drag: none;
-          -webkit-user-drag: none;
-          -ms-user-select: none;
         }
         @media (max-width: 600px) {
           .image {
@@ -71,6 +65,8 @@ export default props => {
             margin: -${sizeMagnifierMobile / 2}px;
             height: ${sizeMagnifierMobile}px;
             width: ${sizeMagnifierMobile}px;
+            padding: 35px;
+            background-size: 300px;
           }
         }
       `}</style>
