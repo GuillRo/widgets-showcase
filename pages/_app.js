@@ -6,7 +6,7 @@ import { withRouter } from 'next/router'
 
 const pages = [
   { title: "VolumeSlider", href: "/sliders" },
-  { title: "MagnifyingGlass", href: "/glass" },
+  { title: "InvertGlass", href: "/glass" },
   { title: "Drag&Drop", href: "/dragndrop" }
 ]
 
