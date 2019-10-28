@@ -10,11 +10,21 @@ const ShowcaseLayout = (props) => (
         </div>
       </div>
       <div className="row flex-row justify-content-center full-height">
-        <div className="border border-primary col-lg-8 p-0 m-0 mb-sm-11">
+        <div className="display-box col-lg-8 p-0 m-0 mb-sm-11">
           {props.children}
         </div>
       </div>
     </div>
+    <style jsx>{`
+    .display-box {
+      border: solid 2px var(--main-blue);
+    }
+    @media (max-width: 575px) {
+      .display-box {
+        border: none;
+      }
+    }
+    `}</style>
   </>
 )
 

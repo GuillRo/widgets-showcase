@@ -30,6 +30,15 @@ const MainLayout = (props) => {
           flex-direction: column;
           flex-grow: 1;
         }
+        .unselectable {
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          -moz-user-drag: none;
+          -webkit-user-drag: none;
+          -ms-user-select: none;
+        }
       `}</style>
     </>
   )

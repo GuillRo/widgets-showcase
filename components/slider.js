@@ -1,6 +1,6 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
-const Slider = () => {
+const Slider = (props) => {
 
   const [sliderValue, setSliderValue] = useState(50)
   const [clicked, setClicked] = useState(false)
@@ -55,6 +55,10 @@ const Slider = () => {
   const handleTouchMove = event => {
     setValue(event.touches[0].clientX)
   }
+
+  useEffect(() => {
+    props.function(sliderValue / 100)
+  })
 
   return (
 

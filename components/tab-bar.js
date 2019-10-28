@@ -31,41 +31,43 @@ const TabBar = () => {
           text-decoration: none;
           color: white;
           background-color: var(--main-blue);
-          padding: 5px;
+          padding: 5px 10px;
           font-size: 18px;
         }
         .tab-bar :global(.tab-bar-desktop) {
           margin-top: 15px;
           padding: 0 20px;
         }
+        .tab-bar :global(.tab-bar-desktop > .active) {
+          background-color: white;
+          color: var(--main-blue);
+          border-top: solid 2px var(--main-blue);
+          border-left: solid 2px var(--main-blue);
+          border-right: solid 2px var(--main-blue);
+          z-index: 1;
+          position: relative;
+          font-size: 20px;
+          padding-bottom: 6px;
+        }
         .tab-bar :global(.tab-bar-mobile) {
-          /* background-color: var(--main-blue); */
+          background-color: var(--main-blue);
           margin: 0;
           padding: 0;
           color: white;
           display: flex;
-          align-items: flex-end;
-        }
-        .tab-bar :global(.tab-bar-desktop > .active) {
-          background-color: white;
-          color: var(--main-blue);
-          border-top: solid 1px var(--main-blue);
-          border-left: solid 1px var(--main-blue);
-          border-right: solid 1px var(--main-blue);
-          z-index: 1;
-          position: relative;
-          font-size: 20px;
+          justify-content: space-around;
         }
         .tab-bar :global(.tab-bar-mobile > .active) {
           background-color: white;
           color: var(--main-blue);
-          border-top: solid 1px var(--main-blue);
-          border-left: solid 1px var(--main-blue);
-          border-right: solid 1px var(--main-blue);
+          border-top: solid 3px var(--main-blue);
+          border-left: solid 3px var(--main-blue);
+          border-right: solid 3px var(--main-blue);
           z-index: 10;
           position: relative;
           font-size: 20px;
-          margin-bottom: -1px;
+          top: -10px;
+          margin-bottom: -10px;
         }
         .tab-bar :global(a:focus) {
           outline: none;

@@ -5,9 +5,9 @@ import MainLayout from '../components/layouts/main'
 import { withRouter } from 'next/router'
 
 const pages = [
-  { title: "Sliders", href: "/sliders" },
-  { title: "Drag&Drop", href: "/dragndrop" },
-  { title: "MagnifyingGlass", href: "/glass" }
+  { title: "VolumeSlider", href: "/sliders" },
+  { title: "MagnifyingGlass", href: "/glass" },
+  { title: "Drag&Drop", href: "/dragndrop" }
 ]
 
 class MyApp extends App {
