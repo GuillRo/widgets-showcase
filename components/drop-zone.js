@@ -1,5 +1,7 @@
+import Item from './draggable-item'
 
 export default props => {
+
   return (
     <>
       <div className="drop-zone-container d-flex flex-column justify-content-between">
@@ -21,7 +23,10 @@ export default props => {
           </div>
         </div>
         <div className="river"></div>
-        <div className="pick-zone"></div>
+        <div className="pick-zone">
+          <Item />
+
+        </div>
       </div>
       <style jsx>{`
         .drop-zone-container {
